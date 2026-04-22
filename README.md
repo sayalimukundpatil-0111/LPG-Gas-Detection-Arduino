@@ -1,4 +1,4 @@
-# LPG Gas Leakage Detection System using Arduino
+# LPG Leakage Detection System using Arduino
 
 ## Description
 This project detects LPG gas leakage using an MQ-2 sensor and alerts users using a buzzer and LED.
