@@ -24,6 +24,7 @@ The LPG Gas Detection System operates in real-time using an MQ-2 gas sensor conn
    When gas leakage is detected:
    - The LED turns ON as a visual warning
    - The buzzer is activated as an audible alert
+   - The servo motor starts rotating for prevention of further gas flow
 
 7. **Continuous Monitoring**
    The system runs in a continuous loop, ensuring real-time monitoring of gas levels at all times.
