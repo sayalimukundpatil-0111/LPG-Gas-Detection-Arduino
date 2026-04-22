@@ -1,80 +1,32 @@
-# 🔥 LPG Gas Detection System using Arduino
+## ⚙️ Working of the System
 
-## Overview
+The LPG Gas Detection System operates in real-time using an MQ-2 gas sensor connected to an Arduino Uno. The system continuously monitors the surrounding air for the presence of LPG gas and triggers alerts when unsafe levels are detected.
 
-Leakage of LPG gas is a major safety concern in households and industries, often leading to fire hazards and explosions. This project focuses on designing a **low-cost, real-time LPG gas detection system** using Arduino that alerts users immediately when gas concentration exceeds safe levels.
+### Step-by-Step Working:
 
-## Objective
+1. **Sensor Initialization**
+   The MQ-2 gas sensor is powered and allowed to warm up for stable readings. During this time, it starts sensing the surrounding air.
 
-* Detect LPG gas leakage in real-time
-* Provide instant alert using buzzer and LED
-* Develop a reliable and cost-effective safety system
+2. **Gas Detection**
+   The sensor continuously detects the concentration of LPG and other combustible gases in the environment and generates an analog voltage signal based on gas intensity.
 
-##  Working Principle
+3. **Signal Processing**
+   The Arduino Uno reads the analog output from the MQ-2 sensor using its analog input pin. This value represents the gas concentration level.
 
-The system uses an **MQ-2 gas sensor**, which is sensitive to LPG, propane, methane, and smoke.
+4. **Threshold Comparison**
+   The received sensor value is compared with a predefined threshold value set in the program. This threshold is determined based on testing in a normal environment.
 
-* The sensor detects gas concentration in the air
-* It changes its internal resistance based on gas levels
-* This change is converted into an analog voltage signal
-* The Arduino reads this value and compares it with a predefined threshold
-* If the threshold is exceeded:
+5. **Decision Making**
+   - If the sensor value is **below the threshold**, the system remains in a normal state and no alert is triggered.
+   - If the sensor value **exceeds the threshold**, the system detects it as a potential gas leakage condition.
 
-  * 🔴 LED turns ON
-  * 🔊 Buzzer activates
+6. **Alert Activation**
+   When gas leakage is detected:
+   - The LED turns ON as a visual warning
+   - The buzzer is activated as an audible alert
 
-## Components Used
+7. **Continuous Monitoring**
+   The system runs in a continuous loop, ensuring real-time monitoring of gas levels at all times.
 
-* Arduino Uno
-* MQ-2 Gas Sensor
-* Buzzer
-* LED
-* Resistors
-* Breadboard
-* Jumper wires
-
-## Circuit Diagram
-
-<img width="742" height="518" alt="image" src="https://github.com/user-attachments/assets/59a512fc-2bee-4247-bbba-a1df7588bde9" />
-A detailed circuit schematic is under development. The system is currently implemented and tested using a breadboard-based connection.
-
-
-## Code Explanation
-
-The Arduino continuously reads analog data from the MQ-2 sensor:
-
-* `analogRead()` is used to capture gas levels
-* A threshold value is defined based on calibration
-* Conditional logic (`if-else`) triggers alert mechanisms
-
----
-
-## Results
-
-* Successfully detects LPG gas presence
-* Provides immediate audio-visual alert
-* Demonstrated using real-time testing
-
-Images and video demonstration are included in this repository.
-
-## Challenges Faced
-
-* Sensor calibration for accurate detection
-* Avoiding false triggering due to environmental factors
-* Sensitivity adjustment for different gas concentrations
-
-## Future Improvements
-
-*  IoT integration for mobile alerts
-*  GSM module for SMS notification
-*  Automatic exhaust fan activation
-*  Gas concentration monitoring dashboard
-
-##  Conclusion
-
-This project demonstrates a practical and affordable solution for gas leakage detection. It highlights the importance of embedded systems in improving **safety and real-world problem solving**.
----
-
-## ⭐ Note
-
-This project is developed for learning and demonstration purposes. It can be further enhanced for real-world industrial applications.
+### System Flow:
+LPG Gas in Environment → MQ-2 Sensor → Arduino Uno → Threshold Check → LED + Buzzer Alert
